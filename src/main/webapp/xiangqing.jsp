@@ -187,7 +187,6 @@
             <span class="xiadan ml20 mt20">
                 <input class="jrgwc"  type="button" name="jrgwc" value="立即选购" onclick="buy()"/>
                 <input class="jrgwc" type="button" name="jrgwc" value="加入购物车" onclick="add_to_cart()"/>
-                <input class="jrgwc" type="button" name="jrgwc" value="测试" onclick="test()"/>
                 <input type="hidden" value="1" name="cart_hi" id="cart_hi">
             </span>
         </div>
