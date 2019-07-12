@@ -19,5 +19,5 @@ mvn install:install-file -Dfile=jar包地址 -DgroupId=com.alipay.sdk -Dartifact
 ### 更改支付宝密钥
 在mi/src/main/java/com/sure/mi/config/AlipayConfig.java，修改merchant_private_key和alipay_public_key。
 密钥得到的方法是登录蚂蚁金服开发平台，进入https://openhome.alipay.com/platform/appDaily.htm?tab=info，查看支付宝公钥，设置应用公钥。
-在AlipayConfig.java里将公钥改为***支付宝公钥***，将私钥改为***应用公钥对应的密钥。详情请参考支付宝文档。
+在AlipayConfig.java里将公钥改为***支付宝公钥***，将私钥改为***应用公钥***对应的密钥。详情请参考支付宝文档。
 
