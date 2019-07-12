@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sure.mi.mapper.TransactionMapper">
+    <select id="selectTransactionByUsername" parameterType="String" resultType="com.sure.mi.model.Transaction">
+        select p_order.id as id, photo, state, price, createdAt
+from p_order join version on p_order.version_id=version.id
+join user on p_order.user_id=user.id
+where username=#{username}
+    </select>
+</mapper>

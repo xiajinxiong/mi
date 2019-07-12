@@ -1,0 +1,19 @@
+.input {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.input[type="button"] {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+#edit {
+    position: absolute;
+    left: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    height: 40px;
+    width: 70px;
+    text-align: center;
+}

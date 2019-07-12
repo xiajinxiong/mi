@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sure.mi.mapper.UserMapper">
+    <select id="selectUser" parameterType="com.sure.mi.model.LogInInfo" resultType="String">
+        select username from user where username=#{username} and pword=#{pword}
+    </select>
+    <insert id="insertUser" parameterType="com.sure.mi.model.LogUpInfo">
+        insert into user(username, pword, phone) values (#{username}, #{pword}, #{phone})
+    </insert>
+    <select id="checkUsername" parameterType="com.sure.mi.model.LogUpInfo" resultType="String">
+        select username from user where username=#{username}
+    </select>
+    <select id="checkPhone" parameterType="com.sure.mi.model.LogUpInfo" resultType="String">
+        select username from user where phone=#{phone}
+    </select>
+    <select id="selectUserByName" parameterType="String" resultType="com.sure.mi.model.User">
+        select id, nick_name as nickName, phone, pword, signature, hobby, address from user
+        where username=#{username}
+    </select>
+    <update id="updateUser" parameterType="com.sure.mi.model.User">
+        update user set nick_name=#{nickName}, phone=#{phone},
+        pword=#{pword}, signature=#{signature}, hobby=#{hobby},
+        address=#{address} where username=#{username}
+    </update>
+    <select id="selectIdByName" parameterType="String" resultType="Long">
+        select id from user where username=#{username}
+    </select>
+</mapper>

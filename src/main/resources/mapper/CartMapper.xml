@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sure.mi.mapper.CartMapper">
+    <insert id="addToCart">
+        insert into cart(user_id, product_id, version_id, number) values(#{userId}, #{productId}, #{versionId},
+        1)
+    </insert>
+    <select id="selectNumber" resultType="Integer">
+        select number from cart where user_id=#{userId} and product_id=#{productId}
+        and version_id=#{versionId}
+    </select>
+    <update id="updateCart">
+        update cart
+        set number = #{number}
+        where user_id=#{userId} and product_id=#{productId} and version_id=#{versionId}
+    </update>
+    <delete id="deleteCart">
+        delete from cart
+        where user_id=#{userId} and product_id=#{productId} and version_id=#{versionId}
+    </delete>
+    <select id="selectCartByUserId" parameterType="long" resultType="com.sure.mi.model.CartItem">
+        select name, version, color, price, photo, number
+        from cart join product
+        on cart.product_id=product.id
+        join version on
+        cart.version_id=version.id
+        where user_id = #{userId}
+    </select>
+</mapper>

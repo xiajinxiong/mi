@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sure.mi.mapper.VersionMapper">
+    <select id="selectIdByVersionAndColor" resultType="Long">
+        select id from version where version=#{version} and color=#{color} and product_id=#{productId}
+    </select>
+    <select id="selectIdByNameAndVersionAndColor" resultType="Long">
+        select version.id as id from version join product
+        on version.product_id = product.id
+        where product.name=#{name} and version.version=#{version}
+        and version.color=#{color}
+    </select>
+</mapper>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sure.mi.mapper.OverviewMapper">
+    <select id="selectAllOverview" resultType="com.sure.mi.model.Overview">
+        select name, overview, min(price) as price, photo as image from product join version
+        on product.id=version.product_id group by product.id
+    </select>
+</mapper>
