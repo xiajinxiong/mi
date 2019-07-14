@@ -1,5 +1,6 @@
 # mi
 小米商城
+地址http://139.155.135.210
 采用Servlets/Jsp
 ## 运行方法：
 ```
@@ -20,4 +21,6 @@ mvn install:install-file -Dfile=jar包地址 -DgroupId=com.alipay.sdk -Dartifact
 在mi/src/main/java/com/sure/mi/config/AlipayConfig.java，修改merchant_private_key和alipay_public_key。
 密钥得到的方法是登录蚂蚁金服开发平台，进入https://openhome.alipay.com/platform/appDaily.htm?tab=info，查看支付宝公钥，设置应用公钥。
 在AlipayConfig.java里将公钥改为***支付宝公钥***，将私钥改为***应用公钥***对应的密钥。详情请参考支付宝文档。
+### 创建mysql数据库
+并执行sqlsql.sql
 
